@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JARVIS</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="hud" id="hudMain">
+  <div class="header">JARVIS</div>
+
+  <div class="left">
+    <div class="btn" onclick="toggleAll()">ALL COMMANDS</div>
+    <div class="dropdown" id="allDropdown">
+      <div onclick="execute('activate')">Activate</div>
+      <div onclick="execute('deactivate')">Deactivate</div>
+      <div onclick="execute('standby')">Standby</div>
+      <div onclick="execute('resume')">Resume</div>
+      <div onclick="execute('mute')">Mute</div>
+      <div onclick="execute('unmute')">Unmute</div>
+      <div onclick="execute('changeVoice')">Change Voice</div>
+      <div onclick="execute('repeat')">Repeat</div>
+      <div onclick="execute('color')">Color Change</div>
+      <div onclick="execute('input')">Input Change</div>
+      <div onclick="execute('status')">Status</div>
+    </div>
+
+
+    <div class="btn" onclick="toggleSettings()">SETTINGS</div>
+    <div class="dropdown" id="settingsDropdown">
+      <div onclick="loadCoreSystem()">Core</div>
+      <div id="commandConfirmToggle">Command Confirmation - OFF</div>
+      <div id="captionsToggle">Captions - OFF</div>
+      <div id="brightnessToggle">Brightness - MEDIUM</div>
+    </div>
+  </div>
+
+  <div class="core">
+    <div class="circle" id="coreCircle"></div>
+    <div class="status" id="status">SYSTEM OFFLINE</div>
+  </div>
+
+  <input id="textInput" placeholder="Type command and press Enter">
+</div>
+
+<div id="coreSystem"></div>
+
+<!-- Confirmation Overlay -->
+<div id="confirmOverlay">
+  <div id="confirmBox">
+    <div>Confirm command execution?</div>
+    <button id="confirmYes">YES</button>
+    <button id="confirmNo">NO</button>
+  </div>
+</div>
+
+<!-- Libraries -->
+<script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+
+<!-- JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
